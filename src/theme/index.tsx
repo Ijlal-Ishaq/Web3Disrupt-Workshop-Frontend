@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { CssBaseline, PaletteMode, ThemeOptions } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -21,7 +21,7 @@ declare module "@mui/material/styles" {
   }
 }
 
-const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
+const getTheme = (mode: PaletteMode): ThemeOptions => ({
   breakpoints: {
     values: {
       xs: 0,
@@ -38,7 +38,9 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
       ? {
           // palette values for light mode
           primary: {
-            main: "#000",
+            main: "#49281A",
+            dark: "#AB6832",
+            light: "#DFB78C",
           },
           background: {
             default: "#fff",
@@ -67,10 +69,10 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
 });
 
 const Theme: FC = ({ children }) => {
-  const [mode] = useState('light');
+  const [mode] = useState("light");
 
   const theme = useMemo(
-    () => createTheme(getDesignTokens(mode as PaletteMode)),
+    () => createTheme(getTheme(mode as PaletteMode)),
     [mode]
   );
 
@@ -80,10 +82,6 @@ const Theme: FC = ({ children }) => {
       fontSize: "0.7rem",
     },
   };
-
-  useEffect(() => {
-    console.log("theme:", mode);
-  }, [mode]);
 
   return (
     <>

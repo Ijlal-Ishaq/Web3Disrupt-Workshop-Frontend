@@ -3,9 +3,8 @@ import * as Components from "./components";
 import { useWeb3React } from "@web3-react/core";
 import { injector, getErrorMessage } from "../../utils/connector";
 
-
 const Index: FC = () => {
-  const {activate , active} = useWeb3React();
+  const { activate, active, account } = useWeb3React();
 
   const connectMetamask = async () => {
     activate(injector, (err) => {
@@ -15,12 +14,11 @@ const Index: FC = () => {
 
   return (
     <Components.MainContainer>
-      {
-        active 
-        ? <h1 style={{color:'black'}}>Welcome to Web3Disrupt</h1> 
-        : <button onClick={connectMetamask}>Connect Metamask</button>
-
-      }
+      {active ? (
+        <h1 style={{ color: "black" }}>Welcome to Web3Disrupt {account}</h1>
+      ) : (
+        <button onClick={connectMetamask}>Connect Metamask</button>
+      )}
     </Components.MainContainer>
   );
 };
