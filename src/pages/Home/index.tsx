@@ -1,25 +1,21 @@
 import { FC } from "react";
-import * as Components from "./components";
 import { useWeb3React } from "@web3-react/core";
-import { injector, getErrorMessage } from "../../utils/connector";
+import { Typography, Grid } from "@mui/material";
+import { Navbar } from "../../styles";
+import UserBadge from "../../components/UserBadge";
 
 const Index: FC = () => {
-  const { activate, active, account } = useWeb3React();
-
-  const connectMetamask = async () => {
-    activate(injector, (err) => {
-      console.log(getErrorMessage(err));
-    });
-  };
+  const { account } = useWeb3React();
 
   return (
-    <Components.MainContainer>
-      {active ? (
-        <h1 style={{ color: "black" }}>Welcome to Web3Disrupt {account}</h1>
-      ) : (
-        <button onClick={connectMetamask}>Connect Metamask</button>
-      )}
-    </Components.MainContainer>
+    <Grid container>
+      <Navbar xs={12}>
+        <UserBadge />
+      </Navbar>
+      <Grid xs={12} style={{ height: "85vh", border: "1px solid black" }}>
+        <Typography>Welcome to Web3Disrupt {account}</Typography>
+      </Grid>
+    </Grid>
   );
 };
 

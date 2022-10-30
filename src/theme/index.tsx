@@ -43,11 +43,11 @@ const getTheme = (mode: PaletteMode): ThemeOptions => ({
             light: "#DFB78C",
           },
           background: {
-            default: "#fff",
-            paper: "#fff",
+            default: "#DFB78C",
+            paper: "#49281A",
           },
           text: {
-            primary: "#fff",
+            primary: "#49281A",
             secondary: "#fff",
           },
         }

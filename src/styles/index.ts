@@ -1,4 +1,12 @@
-import { Box, CircularProgress, Modal, styled } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Grid,
+  Modal,
+  Paper,
+  styled,
+  Typography,
+} from "@mui/material";
 import { common } from "../utils/common";
 
 export const ThemeColors = {
@@ -61,4 +69,30 @@ export const LoaderWrapper = styled(Box)(({ theme: { palette } }) => ({
   borderRadius: 10,
   border: `2px solid ${palette.primary.main}`,
   ...common.r_c_c,
+}));
+
+export const Text = styled(Typography)(({ theme: { palette } }) => ({
+  textAlign: "center",
+  color: palette.primary.contrastText,
+  fontSize: 20,
+  ...common.r_c_c,
+}));
+
+export const Navbar = styled(Grid)(({ theme: { palette } }) => ({
+  height: "15vh",
+  border: "1px solid black",
+  padding: "0px 30px 0px 30px",
+  ...common.r_c_fe,
+}));
+
+export const UserBadge = styled(Paper)(({ theme: { palette } }) => ({
+  padding: "10px 20px",
+  borderRadius: 10,
+}));
+
+export const UserBalance = styled(Paper)(({ theme: { palette } }) => ({
+  backgroundColor: "white",
+  padding: "2px 7px",
+  marginRight: 10,
+  fontWeight: "bold",
 }));
