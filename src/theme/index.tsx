@@ -66,6 +66,9 @@ const getTheme = (mode: PaletteMode): ThemeOptions => ({
           },
         }),
   },
+  typography: {
+    fontFamily: "Fredoka One,cursive",
+  },
 });
 
 const Theme: FC = ({ children }) => {

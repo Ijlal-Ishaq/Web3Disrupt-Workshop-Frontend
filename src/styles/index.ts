@@ -1,13 +1,17 @@
 import {
   Box,
+  Button,
   CircularProgress,
   Grid,
+  IconButton,
   Modal,
   Paper,
   styled,
   Typography,
 } from "@mui/material";
 import { common } from "../utils/common";
+import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 
 export const ThemeColors = {
   light: "#DFB78C",
@@ -80,7 +84,6 @@ export const Text = styled(Typography)(({ theme: { palette } }) => ({
 
 export const Navbar = styled(Grid)(({ theme: { palette } }) => ({
   height: "15vh",
-  border: "1px solid black",
   padding: "0px 30px 0px 30px",
   ...common.r_c_fe,
 }));
@@ -95,4 +98,52 @@ export const UserBalance = styled(Paper)(({ theme: { palette } }) => ({
   padding: "2px 7px",
   marginRight: 10,
   fontWeight: "bold",
+}));
+
+export const CoffeeContainer = styled(Paper)(({ theme: { palette } }) => ({
+  backgroundColor: palette.primary.main,
+  width: "55%",
+  padding: "20px 20px",
+  ...common.c_c_sb,
+}));
+
+export const MainContainer = styled(Grid)(({ theme: { palette } }) => ({
+  height: "85vh",
+  ...common.r_c_c,
+}));
+
+export const SendCoffeeButton = styled(Button)(({ theme: { palette } }) => ({
+  background: "white",
+  color: palette.primary.main,
+  fontWeight: "bold",
+  marginTop: 35,
+  "&:hover": {
+    backgroundColor: palette.primary.light,
+  },
+}));
+
+export const ButtonIcon = styled(IconButton)(({ theme: { palette } }) => ({
+  backgroundColor: "white",
+  padding: "0px",
+  boxShadow: "rgba(0,0,0,0.4) 10px 3px 7px 0px",
+  "&:hover": {
+    backgroundColor: palette.primary.light,
+  },
+}));
+
+export const AmountText = styled(Text)(({ theme: { palette } }) => ({
+  textDecoration: "underline",
+  fontSize: 150,
+  filter: "drop-shadow(rgba(0, 0, 0, 0.6) 11px 4px 2px)",
+  fontFamily: "Fredoka One, cursive",
+}));
+
+export const UpIcon = styled(KeyboardArrowUp)(({ theme: { palette } }) => ({
+  color: palette.primary.main,
+  fontSize: 50,
+}));
+
+export const DownIcon = styled(KeyboardArrowDown)(({ theme: { palette } }) => ({
+  color: palette.primary.main,
+  fontSize: 50,
 }));
