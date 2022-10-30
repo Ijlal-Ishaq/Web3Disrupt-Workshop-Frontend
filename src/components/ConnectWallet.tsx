@@ -23,6 +23,7 @@ const ConnectWallet = () => {
       setWasConnectedBefore(true);
     })();
   }, []);
+
   return (
     <BasicModal open={!web3context.active}>
       <LoaderWrapper>

@@ -9,10 +9,10 @@ const Index: FC = () => {
 
   return (
     <Grid container>
-      <Navbar xs={12}>
+      <Navbar item xs={12}>
         <UserBadge />
       </Navbar>
-      <Grid xs={12} style={{ height: "85vh", border: "1px solid black" }}>
+      <Grid item xs={12} style={{ height: "85vh", border: "1px solid black" }}>
         <Typography>Welcome to Web3Disrupt {account}</Typography>
       </Grid>
     </Grid>
