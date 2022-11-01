@@ -2,7 +2,10 @@ import Web3 from "web3";
 
 export const web3 = window.ethereum
   ? new Web3(window.ethereum)
-  : new Web3(new Web3.providers.HttpProvider("https://rpc.ankr.com/eth"));
+  : new Web3(
+      new Web3.providers.HttpProvider("https://rpc.ankr.com/polygon_mumbai")
+    );
+// : new Web3(new Web3.providers.HttpProvider("https://rpc.ankr.com/eth"));
 
 export const formatAddress = (address: string) =>
   address

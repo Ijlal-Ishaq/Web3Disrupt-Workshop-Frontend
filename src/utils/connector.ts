@@ -6,7 +6,7 @@ import {
 import { UnsupportedChainIdError } from "@web3-react/core";
 
 export const injector = new InjectedConnector({
-  supportedChainIds: [1],
+  supportedChainIds: [1, 5, 80001],
 });
 
 export const getErrorMessage = (error: any) => {

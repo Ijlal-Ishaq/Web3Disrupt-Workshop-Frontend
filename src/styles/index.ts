@@ -89,6 +89,7 @@ export const Navbar = styled(Grid)(({ theme: { palette } }) => ({
 }));
 
 export const UserBadge = styled(Paper)(({ theme: { palette } }) => ({
+  marginLeft: 20,
   padding: "10px 20px",
   borderRadius: 10,
 }));

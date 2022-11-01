@@ -21,7 +21,7 @@ const UserBadgeComp = () => {
   return (
     <UserBadge elevation={3}>
       <div style={{ ...common.r_c_c }}>
-        <UserBalance elevation={3}>{userBalance} ETH</UserBalance>
+        <UserBalance elevation={3}>{userBalance} MATIC</UserBalance>
         <Text>{formatAddress(account ?? "")}</Text>
       </div>
     </UserBadge>
