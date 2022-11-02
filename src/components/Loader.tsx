@@ -1,7 +1,9 @@
+import { FC } from "react";
+import { LoaderProps } from "../interfaces";
 import { CircularProgressStyled } from "../styles";
 
-const Loader = () => {
-  return <CircularProgressStyled size={70} />;
+const Loader: FC<LoaderProps> = ({ size = 70 }) => {
+  return <CircularProgressStyled size={size} />;
 };
 
 export default Loader;

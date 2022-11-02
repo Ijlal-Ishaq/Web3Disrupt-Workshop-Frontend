@@ -12,6 +12,9 @@ import {
 import { common } from "../utils/common";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
+import CancelIcon from "@mui/icons-material/Cancel";
+import FreeBreakfastIcon from "@mui/icons-material/FreeBreakfast";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 
 export const ThemeColors = {
   light: "#DFB78C",
@@ -75,6 +78,15 @@ export const LoaderWrapper = styled(Box)(({ theme: { palette } }) => ({
   ...common.r_c_c,
 }));
 
+export const NftModalWrapper = styled(Box)(({ theme: { palette } }) => ({
+  outline: "none",
+  background: palette.primary.light,
+  borderRadius: 10,
+  border: `2px solid ${palette.primary.main}`,
+  padding: 20,
+  ...common.c_c_c,
+}));
+
 export const Text = styled(Typography)(({ theme: { palette } }) => ({
   textAlign: "center",
   color: palette.primary.contrastText,
@@ -83,9 +95,10 @@ export const Text = styled(Typography)(({ theme: { palette } }) => ({
 }));
 
 export const Navbar = styled(Grid)(({ theme: { palette } }) => ({
-  height: "15vh",
-  padding: "0px 30px 0px 30px",
-  ...common.r_c_fe,
+  marginTop: 25,
+  height: "20vh",
+  padding: "15px 30px 0px 30px",
+  ...common.r_fs_fe,
 }));
 
 export const UserBadge = styled(Paper)(({ theme: { palette } }) => ({
@@ -109,7 +122,7 @@ export const CoffeeContainer = styled(Paper)(({ theme: { palette } }) => ({
 }));
 
 export const MainContainer = styled(Grid)(({ theme: { palette } }) => ({
-  height: "85vh",
+  height: "75vh",
   ...common.r_c_c,
 }));
 
@@ -133,7 +146,6 @@ export const ButtonIcon = styled(IconButton)(({ theme: { palette } }) => ({
 }));
 
 export const AmountText = styled(Text)(({ theme: { palette } }) => ({
-  textDecoration: "underline",
   fontSize: 150,
   filter: "drop-shadow(rgba(0, 0, 0, 0.6) 11px 4px 2px)",
   fontFamily: "Fredoka One, cursive",
@@ -147,4 +159,76 @@ export const UpIcon = styled(KeyboardArrowUp)(({ theme: { palette } }) => ({
 export const DownIcon = styled(KeyboardArrowDown)(({ theme: { palette } }) => ({
   color: palette.primary.main,
   fontSize: 50,
+}));
+
+export const CrossIcon = styled(CancelIcon)(({ theme: { palette } }) => ({
+  color: "red",
+  fontSize: 35,
+}));
+
+export const ModalText = styled(Text)(({ theme: { palette } }) => ({
+  color: palette.primary.main,
+}));
+
+export const DummyNFT = styled(Paper)(({ theme: { palette } }) => ({
+  background: "white",
+  height: 208,
+  padding: "7px 12%",
+  border: "2px solid black",
+  marginTop: 20,
+}));
+
+export const ExplorerButton = styled(Button)(({ theme: { palette } }) => ({
+  backgroundColor: "white",
+  color: palette.primary.main,
+  marginTop: 20,
+}));
+
+export const FaucetButton = styled(Button)(({ theme: { palette } }) => ({
+  marginRight: 20,
+}));
+
+export const Outerwrapper = styled("div")(({ theme: { palette } }) => ({
+  ...common.c_c_c,
+  outline: "none",
+}));
+
+export const CrossButton = styled(IconButton)(({ theme: { palette } }) => ({
+  alignSelf: "flex-end",
+}));
+
+export const InputWrapper = styled("div")(({ theme: { palette } }) => ({
+  ...common.r_c_sa,
+  width: "100%",
+}));
+
+export const CoffeeIcon = styled(FreeBreakfastIcon)(
+  ({ theme: { palette } }) => ({
+    color: "white",
+  })
+);
+
+export const TokenIcon = styled(MonetizationOnIcon)(
+  ({ theme: { palette } }) => ({
+    color: "white",
+  })
+);
+
+export const IconAvatar = styled(IconButton)(({ theme: { palette } }) => ({
+  backgroundColor: palette.primary.main,
+}));
+
+export const CheckTokenWrapper = styled("div")(({ theme: { palette } }) => ({
+  ...common.r_c_c,
+  marginTop: 10,
+}));
+
+export const GetCoffeeTokensWrapper = styled("div")(
+  ({ theme: { palette } }) => ({
+    marginTop: 20,
+  })
+);
+
+export const UserBadgeCompWrapper = styled("div")(({ theme: { palette } }) => ({
+  ...common.c_fe_c,
 }));

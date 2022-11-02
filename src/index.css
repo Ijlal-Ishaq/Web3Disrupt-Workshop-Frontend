@@ -20,6 +20,13 @@ code {
 
 .coffee-cup {
   animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(rgba(0, 0, 0, 0.6) 25px 8px 3px);
+  height: 80%;
+}
+
+.coffee-on-modal {
+  height: 100%;
+  cursor: pointer;
 }
 
 @keyframes float {

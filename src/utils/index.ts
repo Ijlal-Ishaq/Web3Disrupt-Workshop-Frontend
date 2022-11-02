@@ -17,3 +17,40 @@ export const getUserNativeBalance = async (address: string) => {
   const balanceInEth = web3.utils.fromWei(balanceInWei);
   return Number(balanceInEth);
 };
+
+export const getERC20Balance = async (
+  ERC20contractAbi: any,
+  ERC20contractAddress: string,
+  userAddress: string
+) => {
+  const Erc20Contract = new web3.eth.Contract(
+    ERC20contractAbi,
+    ERC20contractAddress
+  );
+  const BalanceInWei = await Erc20Contract.methods
+    .balanceOf(userAddress)
+    .call();
+  const BalanceInEther = web3.utils.fromWei(BalanceInWei);
+  return Number(BalanceInEther);
+};
+
+export const checkApprovalOfErc20Token = async (
+  ERC20contractAbi: any,
+  ERC20contractAddress: string,
+  userAddress: string,
+  spenderAddres: string
+) => {
+  const Erc20Contract = new web3.eth.Contract(
+    ERC20contractAbi,
+    ERC20contractAddress
+  );
+  const allowanceAmountInWei = await Erc20Contract.methods
+    .allowance(userAddress, spenderAddres)
+    .call();
+  const allowanceAmountInEther = web3.utils.fromWei(allowanceAmountInWei);
+  return Number(allowanceAmountInEther) > 1;
+};
+
+export const openUrl = (url: string) => {
+  window.open(url, "_blank")?.focus();
+};

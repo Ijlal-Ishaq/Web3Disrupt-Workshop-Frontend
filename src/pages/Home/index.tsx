@@ -1,22 +1,29 @@
-import { FC } from "react";
 import { Grid } from "@mui/material";
-import { MainContainer, Navbar } from "../../styles";
+import { FaucetButton, MainContainer, Navbar } from "../../styles";
 import UserBadge from "../../components/UserBadge";
 import CoffeeContainer from "../../components/CoffeeContainer";
-import GetCoffeeTokens from "../../components/GetCoffeeTokens";
+import FaucetModal from "../../components/FaucetModal";
+import { useState } from "react";
 
-const Index: FC = () => {
+const Home = () => {
+  const [faucetModal, setFaucetModal] = useState(false);
   return (
     <Grid container>
       <Navbar item xs={12}>
-        <GetCoffeeTokens />
+        <FaucetButton variant="contained" onClick={() => setFaucetModal(true)}>
+          Faucet
+        </FaucetButton>
         <UserBadge />
       </Navbar>
       <MainContainer item xs={12}>
         <CoffeeContainer />
       </MainContainer>
+      <FaucetModal
+        open={faucetModal}
+        closeModal={() => setFaucetModal(false)}
+      />
     </Grid>
   );
 };
 
-export default Index;
+export default Home;

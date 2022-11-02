@@ -1,10 +1,9 @@
 import { Button } from "@mui/material";
 import { useWeb3React } from "@web3-react/core";
 import { useState } from "react";
-import { LoaderWrapper } from "../styles";
+import { GetCoffeeTokensWrapper } from "../styles";
 import { web3 } from "../utils";
-import BasicModal from "./BasicModal";
-import Loader from "./Loader";
+import LoadingModal from "./LoadingModal";
 
 const { abi: coffeeERC20ABI } = require("../abi/coffeeTokenERC20.json");
 
@@ -34,16 +33,12 @@ const GetCoffeeTokens = () => {
       });
   };
   return (
-    <>
+    <GetCoffeeTokensWrapper>
       <Button variant="contained" onClick={getCoffeeTokens}>
-        GET SOME COFFEE TOKENS
+        GET COFFEE TOKENS
       </Button>
-      <BasicModal open={isLoading}>
-        <LoaderWrapper>
-          <Loader />
-        </LoaderWrapper>
-      </BasicModal>
-    </>
+      <LoadingModal open={isLoading} />
+    </GetCoffeeTokensWrapper>
   );
 };
 
