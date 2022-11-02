@@ -54,3 +54,9 @@ export const checkApprovalOfErc20Token = async (
 export const openUrl = (url: string) => {
   window.open(url, "_blank")?.focus();
 };
+
+export const COFFEE_TOKEN_ADDRESS =
+  "0xF3CcB93f3a1Ee251a11806BDADC1E5848918cEA6";
+
+export const BUY_ME_COFFEE_CONTRACT_ADDRESS =
+  "0xc49a84ceD3075b291A38f8f5cDA596524B6B6421";

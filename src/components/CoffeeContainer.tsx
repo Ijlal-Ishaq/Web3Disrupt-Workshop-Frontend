@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import { CoffeeContainer, InputWrapper, SendCoffeeButton } from "../styles";
 import CoffeeInput from "./CoffeeInput";
 import coffee from "../assets/coffee.png";
-import { checkApprovalOfErc20Token, web3 } from "../utils";
+import {
+  BUY_ME_COFFEE_CONTRACT_ADDRESS,
+  checkApprovalOfErc20Token,
+  COFFEE_TOKEN_ADDRESS,
+  web3,
+} from "../utils";
 import { useWeb3React } from "@web3-react/core";
 import LoadingModal from "./LoadingModal";
 import NftModal from "./NftModal";
@@ -22,7 +27,7 @@ const CoffeeContainerComp = () => {
   const donateCoffee = async () => {
     const coffeeContract = new web3.eth.Contract(
       coffeeABI,
-      "0xc49a84ceD3075b291A38f8f5cDA596524B6B6421"
+      BUY_ME_COFFEE_CONTRACT_ADDRESS
     );
     setIsLoading(true);
     await coffeeContract.methods
@@ -58,9 +63,9 @@ const CoffeeContainerComp = () => {
   const checkApprovalOfCoffeeToken = async () => {
     const isApproved = await checkApprovalOfErc20Token(
       coffeeERC20ABI,
-      "0xF3CcB93f3a1Ee251a11806BDADC1E5848918cEA6",
+      COFFEE_TOKEN_ADDRESS,
       `${account}`,
-      "0xc49a84ceD3075b291A38f8f5cDA596524B6B6421"
+      BUY_ME_COFFEE_CONTRACT_ADDRESS
     );
     setIsTokenApproved(isApproved);
   };
@@ -68,12 +73,12 @@ const CoffeeContainerComp = () => {
   const approvetokens = async () => {
     const coffeeERC20Contract = new web3.eth.Contract(
       coffeeERC20ABI,
-      "0xF3CcB93f3a1Ee251a11806BDADC1E5848918cEA6"
+      COFFEE_TOKEN_ADDRESS
     );
     setIsLoading(true);
     const approvalAmount = web3.utils.toWei("10");
     await coffeeERC20Contract.methods
-      .approve("0xc49a84ceD3075b291A38f8f5cDA596524B6B6421", approvalAmount)
+      .approve(BUY_ME_COFFEE_CONTRACT_ADDRESS, approvalAmount)
       .send({
         from: account,
       })

@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { useWeb3React } from "@web3-react/core";
 import { useState } from "react";
 import { GetCoffeeTokensWrapper } from "../styles";
-import { web3 } from "../utils";
+import { COFFEE_TOKEN_ADDRESS, web3 } from "../utils";
 import LoadingModal from "./LoadingModal";
 
 const { abi: coffeeERC20ABI } = require("../abi/coffeeTokenERC20.json");
@@ -15,7 +15,7 @@ const GetCoffeeTokens = () => {
   const getCoffeeTokens = async () => {
     const coffeeErc20Contract = new web3.eth.Contract(
       coffeeERC20ABI,
-      "0xF3CcB93f3a1Ee251a11806BDADC1E5848918cEA6"
+      COFFEE_TOKEN_ADDRESS
     );
     const amountTomint = web3.utils.toWei("3");
     setIsLoading(true);

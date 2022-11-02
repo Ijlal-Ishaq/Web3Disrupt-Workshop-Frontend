@@ -7,7 +7,7 @@ import {
   IconAvatar,
   UserBalance,
 } from "../styles";
-import { getERC20Balance } from "../utils";
+import { COFFEE_TOKEN_ADDRESS, getERC20Balance } from "../utils";
 
 const { abi: coffeeERC20ABI } = require("../abi/coffeeTokenERC20.json");
 
@@ -20,7 +20,7 @@ const CheckCoffeeTokens = () => {
     setIsLoading(true);
     const CoffeeBalance = await getERC20Balance(
       coffeeERC20ABI,
-      "0xF3CcB93f3a1Ee251a11806BDADC1E5848918cEA6",
+      COFFEE_TOKEN_ADDRESS,
       `${account}`
     );
     setCoffeeBalance(Number(CoffeeBalance.toFixed(3)));
